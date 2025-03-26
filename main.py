@@ -84,11 +84,21 @@ print(y)
 inv_a=np.linalg.inv(a)
 m1
 print(np.dot(m1,inv_a))
-sol=np.dot(m1,y)
-print(sol)
+x=np.dot(inv_a,y)
+print(x)
 #verification
-err=np.sum((np.dot(m1,sol)-y)**2)
-sol2=np.linalg.solve(m1,y)
-err2=np.sum((np.dot(m1,sol2)-y)**2)
-print('err=',err,'err2=',err2)
+err1=np.sum((np.dot(a,x)-y)**2)
+x2=np.linalg.solve(a,y)
+err2=np.sum((np.dot(a,x2)-y)**2)
+print('err1=',err1,'err2=',err2)
+# %%
+x=np.arange(100)
+np.random.shuffle(x)
+print(x)
+#%%
+print(x)
+print(np.where(x%5==0))
+#y=np.extract(x%3==0,x)
+y=np.extract(x%3!=0,x)
+print(y)
 # %%
